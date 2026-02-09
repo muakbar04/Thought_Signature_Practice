@@ -7,9 +7,9 @@ from fastapi import APIRouter, HTTPException, BackgroundTasks
 from typing import Dict, List, Optional
 from datetime import datetime, timezone, timedelta
 
-from ..models.database import MarathonDB
-from ..models.schemas import CampaignCreate, CampaignResponse, CampaignRunResponse
-from ..services.job_search import JobSearchAgent
+from models.database import MarathonDB
+from models.schemas import CampaignCreate, CampaignResponse, CampaignRunResponse
+from services.job_search import JobSearchAgent
 
 router = APIRouter(prefix="/api/campaigns", tags=["Campaigns"])
 db = MarathonDB()
