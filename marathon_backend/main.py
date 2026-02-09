@@ -26,8 +26,8 @@ load_dotenv()
 
 # Import routers
 # Import routers
-from .routers import profile, profiles, campaigns, jobs, gmail, auth
-from .services import socketio_service
+from routers import profile, profiles, campaigns, jobs, gmail, auth
+from services import socketio_service
 
 # Socket.IO setup for real-time communication (must be before lifespan)
 sio = AsyncServer(
