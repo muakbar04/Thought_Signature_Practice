@@ -16,8 +16,8 @@ from typing_extensions import TypedDict
 from datetime import datetime
 
 from dotenv import load_dotenv
-from .gmail_service import GmailService
-from .gemini_client import call_gemini as _openrouter_call
+from services.gmail_service import GmailService
+from services.gemini_client import call_gemini as _openrouter_call
 
 load_dotenv()
 
