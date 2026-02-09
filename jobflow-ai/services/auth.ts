@@ -1,6 +1,6 @@
 import { UserProfile } from "../types";
 
-const API_URL = "http://localhost:8000/auth";
+const API_URL = "https://jobflow-backend-ogwm.onrender.com/auth";
 
 export interface AuthResponse {
     access_token: string;
