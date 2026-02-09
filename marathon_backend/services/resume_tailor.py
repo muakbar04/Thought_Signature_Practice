@@ -6,7 +6,7 @@ import json
 import re
 from typing import Dict, Tuple, Optional
 from dotenv import load_dotenv
-from .gemini_client import call_gemini
+from services.gemini_client import call_gemini
 
 load_dotenv()
 
