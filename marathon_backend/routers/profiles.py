@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from ..models.database import MarathonDB
+from models.database import MarathonDB
 
 router = APIRouter(prefix="/api/profiles", tags=["Profiles"])
 db = MarathonDB()
