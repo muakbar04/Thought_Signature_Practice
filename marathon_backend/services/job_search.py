@@ -9,7 +9,7 @@ from typing import List, Tuple, Optional, Dict
 from datetime import datetime, timezone
 from dotenv import load_dotenv
 
-from .gemini_client import call_gemini
+from services.gemini_client import call_gemini
 
 load_dotenv()
 
