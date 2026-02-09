@@ -5,15 +5,15 @@ from fastapi import APIRouter, HTTPException, BackgroundTasks, Depends
 from typing import Dict, List, Optional
 from datetime import datetime, timezone
 
-from ..models.database import MarathonDB
-from ..models.schemas import JobResponse, JobApplicationUpdate, GmailDraftCreate, JobManualExtractRequest
-from ..services.resume_tailor import ResumeTailorService
-from ..services.gmail_service import GmailService
-from ..services.pdf_renderer import generate_resume_pdf, convert_tailored_to_pdf_data
-from ..models.schemas import RawJobPost, PublicJobCreate, PublicJobResponse
-from ..services.job_parser import parse_job_text
-from .auth import get_current_user
-from ..services.job_search import search_jobs_with_ai, get_job_key
+from models.database import MarathonDB
+from models.schemas import JobResponse, JobApplicationUpdate, GmailDraftCreate, JobManualExtractRequest
+from services.resume_tailor import ResumeTailorService
+from services.gmail_service import GmailService
+from services.pdf_renderer import generate_resume_pdf, convert_tailored_to_pdf_data
+from models.schemas import RawJobPost, PublicJobCreate, PublicJobResponse
+from services.job_parser import parse_job_text
+from routers.auth import get_current_user
+from services.job_search import search_jobs_with_ai, get_job_key
 from pydantic import BaseModel
 
 class JobSearchRequest(BaseModel):
