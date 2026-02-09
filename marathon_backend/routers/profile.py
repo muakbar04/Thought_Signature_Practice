@@ -6,10 +6,10 @@ from typing import Dict, Optional
 import os
 import uuid
 
-from ..models.database import MarathonDB
-from ..models.schemas import ProfileBase, ProfileUpdate, ProfileResponse
-from ..services.resume_parser import parse_resume_bytes
-from ..services.github_service import GitHubService
+from models.database import MarathonDB
+from models.schemas import ProfileBase, ProfileUpdate, ProfileResponse
+from services.resume_parser import parse_resume_bytes
+from services.github_service import GitHubService
 
 router = APIRouter(prefix="/api/profile", tags=["Profile"])
 db = MarathonDB()
