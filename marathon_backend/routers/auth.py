@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr
 from datetime import timedelta
 from typing import Optional
 import uuid
-from ..models.database import MarathonDB
+from models.database import MarathonDB
 from marathon_backend.models.database import supabase
 from marathon_backend.auth import (
     verify_password,
