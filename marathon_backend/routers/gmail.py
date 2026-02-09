@@ -1,7 +1,7 @@
 import requests
 from pydantic import BaseModel
-from ..models.schemas import GmailConnectRequest
-from ..services import socketio_service
+from models.schemas import GmailConnectRequest
+from services import socketio_service
 
 # Request model for sending email
 class SendEmailRequest(BaseModel):
@@ -17,8 +17,8 @@ from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import RedirectResponse
 from typing import Dict, List, Optional
 
-from ..models.database import MarathonDB
-from ..services.gmail_service import GmailService
+from models.database import MarathonDB
+from services.gmail_service import GmailService
 
 router = APIRouter(prefix="/api/gmail", tags=["Gmail"])
 db = MarathonDB()
