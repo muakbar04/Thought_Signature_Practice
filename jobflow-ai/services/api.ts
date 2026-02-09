@@ -268,7 +268,13 @@ class ApiService {
   // ============================================
 
   async getCampaigns(userId: string): Promise<Campaign[]> {
-    return this.request<Campaign[]>(`/campaigns/user/${userId}`);
+    try {
+      return await this.request<Campaign[]>(`/campaigns/user/${userId}`);
+    } catch (error: any) {
+      // If no campaigns found, just return an empty list
+      if (error.status === 404) return [];
+      throw error;
+    }
   }
 
   async getCampaign(campaignId: string): Promise<Campaign> {
@@ -316,7 +322,13 @@ class ApiService {
 
   async getJobs(userId: string, status?: string): Promise<JobApplication[]> {
     const params = status ? `?status=${status}` : '';
-    return this.request<JobApplication[]>(`/jobs/user/${userId}${params}`);
+    try {
+      return await this.request<JobApplication[]>(`/jobs/user/${userId}${params}`);
+    } catch (error: any) {
+      // If no jobs found, just return an empty list
+      if (error.status === 404) return [];
+      throw error;
+    }
   }
 
   async searchJobs(userId: string, query: string, params: { location?: string, num_jobs?: number, days_limit?: number } = {}): Promise<any[]> {
